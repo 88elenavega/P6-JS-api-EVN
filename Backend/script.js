@@ -23,6 +23,11 @@ async function listeProjets (tableau) { //il faut ajouter le nom du tableu corre
     
 }
 
+
+// export function ______ () {
+// import {______} from "./_____.js";
+
+
 //for (let i = 0; i < listeProjets.length; i++) {}
 
 
