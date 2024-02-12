@@ -116,7 +116,7 @@ const travaux = [
 ]
 
 
-//la fonction pour faire defiler/afficher les travaux ?? 
+//la fonction pour faire afficher les projets ?? 
 
 async function montrerTravaux() {
 	const tableau = await listeProjets();
@@ -128,10 +128,25 @@ async function montrerTravaux() {
 }
 montrerTravaux()
 
-
+//jusqu'à ici les images ne se affichent pas encore, voir avec Robin  
 
 
 //Réalisation du filtres des travaux par categories 
 
+//import de fetch - appel pour les categories
+import {listeCategories} from "./api.js"; 
 
+
+
+
+
+//changer "boutonFiltrer#" pour le nom de chaque categorie 
+
+const boutonFiltrer1 = document.querySelector("_")
+boutonFiltrer1.addEventListener("click" => () {
+	const travauxFiltres = travaux.filter(function (travaux) {
+		return travaux.categorie = 
+	})
+	console.log(travauxFiltres)
+})
 
