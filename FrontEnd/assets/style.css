@@ -199,6 +199,34 @@ input[type="submit"]{
 	margin: auto;
 }
 
+.filterbuttons {
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pushbutton {
+	cursor: pointer;
+
+	width: 100px;
+	height: 37px;
+	top: 812px;
+	left: 427px;
+	border-radius: 60px;
+	border: 1px;
+	color: white;
+	background: #1D6154;
+	border: 1px solid #1D6154;
+
+	font-family: Syne;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 19px;
+	letter-spacing: 0em;
+	text-align: center;
+}
+
 
 footer nav ul {
 	display: flex;
