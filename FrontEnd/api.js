@@ -6,22 +6,25 @@ export async function listeProjets() {
     return projets 
     
 }
-console.log(listeProjets)
-
-
 
 //fetch - appel pour les categories 
 export async function listeCategories() {
-	const reponse = await fetch("http://localhost:5678/api/categories"); //.then????
-	const categories = await reponse.json(); //?? 
-    return //???? 
+	const reponse = await fetch("http://localhost:5678/api/categories");
+	const categories = await reponse.json();
+    return categories 
 }
-console.log(listeCategories)
+
+//fetch - appel pour la liste de profils enregistrés avec ses mots de passe  
+export async function listeProfils() {
+	const reponse = await fetch("http://localhost:5678/api/users/login");
+	const clients = await reponse.json();
+    return clients  
+}
+
+
 
 /* fetch("/pieces/1/avis", {
-    method: "POST",
+    method: "POST", 
     headers: { "Content-Type": "application/json" },
     body: '{"commentaire": "Top produit !"}'
 }); */
-
-//event.preventDefault 

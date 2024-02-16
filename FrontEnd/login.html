@@ -25,21 +25,22 @@
 <main>
     <section id="contact">
 		<h2>Log In</h2>
+		<p>Message d'erreur</p>
+
 		<form action="#" method="post">
-			
 			<label for="email">E-mail</label>
 			<input type="email" name="email" id="email">
             <label for="password">Mot de passe</label>
 			<input type="password" name="password" id="password">
-			<!-- ID de mot de passe c'est password aussi ??? -->
-			<input type="submit" value="Se connecter">
+			
+			<input type="submit" value="Se connecter" id="connexion">
 
-            <!-- ajouter "mot de passe oublié" - surligné -->
+            <!-- ajouter le surligné -->
 			<p class="forgottenpassword">Mot de passe oublié
 				<a href=""></a>
 			</p>
-
 		</form>
+		
 	</section>
 </main>
 
@@ -50,6 +51,8 @@
 		</ul>
 	</nav>
 </footer>
+
+<script type="module" src="./login.js"></script>
 
 </body>
 </html>
