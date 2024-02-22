@@ -1,5 +1,5 @@
 
-//fetch - appel à l'API
+//fetch - appel à l'API pour les projets
 export async function listeProjets() { 
     const reponse = await fetch("http://localhost:5678/api/works");
     const projets = await reponse.json(); //?? 
@@ -20,6 +20,8 @@ export async function listeProfils() {
 	const clients = await reponse.json();
     return clients  
 }
+
+
 
 
 
