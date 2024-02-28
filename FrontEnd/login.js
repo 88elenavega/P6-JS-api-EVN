@@ -24,14 +24,7 @@ form.addEventListener("submit", async (event) => {
         return
     }
 
-    function validerEmail(email) {
-        let emailRegExp = new RegExp("[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+")
-        if (emailRegExp.test(email)) {
-            return true
-        } else {
-            return false
-        }
-    }
+  
     
     const user = await seConnecter(emailValue, passwordValue)
 
@@ -42,9 +35,17 @@ form.addEventListener("submit", async (event) => {
     
     localStorage.setItem("token", user.token)
 
-    window.location.href = "/admin.html"
+    window.location.href = "/FrontEnd/admin.html" 
 });
 
-
+function validerEmail(email) {
+    let emailRegExp = new RegExp("[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+")
+    if (emailRegExp.test(email)) {
+        return true
+    } else {
+        return false
+    }
+    
+}
 
 //mtn il faut essayer l'email et mot de passe donné sur README

@@ -49,7 +49,10 @@ buttons.forEach(button => {
     })
 })
 
+
+
 // Authentification de l’utilisateur ---> fichier ./login.js
 
-//MODALE 
+// Modale ---> fichier ./admin.js
+
 
