@@ -6,8 +6,8 @@ const login = window.sessionStorage.login;
 const pageAdmin = document.querySelector("header nav .login");
 const logout = document.querySelector("header nav .logout");
 
-const rectanglemodale = document.querySelector(".rectanglemodale");
-const xmark = document.querySelector(".rectanglemodale .fa-xmark");
+const rectanglemodale = document.querySelector(".modalbox");
+const xmark = document.querySelector(".modalbox .fa-xmark");
 
 if (login == "true") {
     pageAdmin.textContent = "Admin";
