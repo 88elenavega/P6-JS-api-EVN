@@ -136,6 +136,8 @@ li:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
+
+
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
@@ -246,46 +248,80 @@ input[type="submit"]{
 	width: 320px;
 }
 
-/*-------------------------*/
-
-.editionmode {
-    background-color: #0000004D;
+.modification {
+	display: flex;
+	justify-content: center;
 	
 }
 
-.modalbox {
-    display: flex; /* change à none avec JS*/
-    align-items: center;
+.buttonmodifier {
+	font-family: Work Sans;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16px;
+	letter-spacing: 0em;
+	padding-left: 20px;
+	margin-top: 5px;
+}
+
+.fa-pen-to-square {
+	margin-right: 5px;
+}
+
+
+/*-------------------------*/
+
+.modal {
+	position: fixed;
+	inset: 0; /*= top: 0;bottom:0;left:0;right:0; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #0000004D;
+}
+
+.modal__box {
+    display: flex; /* change à none avec JS ???*/
     justify-content: center;
-	z-index: 1; /* Sit on top */
-    position: absolute; /* où mettre la position relative ? */
-    margin: auto;
+	z-index: 1; 
     width: 630px;
     height: 688px;
-    top: 660px;
-    left: 405px;
     border-radius: 10px;
     background-color: white;
+	position: relative;
+	padding: 30px;
+	box-sizing: border-box;
 }
 
 .fa-xmark {
 	cursor: pointer;
-	
-
+	position: absolute;
+	top: 20px;
+	right: 20px;
 }
 
-.modalcontent {
+.modal__box--content {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	align-items: center;
+}
+
+.modal__gallery {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 20px;
+	align-items: center;
+
+	/*pourquoi ne marche pas avec les photos? */
+	width: 20px; 
+	height: 20px;
+	max-width: 20px;
+	max-height: 20px;
+	
 }
 
 
 
-
-h3 {
-	margin: auto;
-}
 
 
 footer nav ul {
@@ -294,3 +330,6 @@ footer nav ul {
 	margin: 2em
 }
 
+.hidden {
+	display: none !important;
+}

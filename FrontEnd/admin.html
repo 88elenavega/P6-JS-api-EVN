@@ -9,6 +9,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="editionmode"> <!--- faire modifier avec JS -->
@@ -19,7 +22,7 @@
             <ul>
                 <li>projets</li>
                 <li>contact</li>
-                <li>login</li> <!--- faire changer avec JS + onglet admin ??? ou ici directement ?--->
+                <li>logout</li> <!--- utilisateur connecté --->
                 <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
             </ul>
         </nav>
@@ -27,17 +30,40 @@
 
 <main>
 
-<section>
-    
-        <div class="modalbox">
-        <span><i class="fa-solid fa-xmark"></i> X </span>
-            <div class="modalcontent">
+    <section id="introduction">
+		<figure>
+			<img src="./assets/images/sophie-bluel.png" alt="">
+		</figure>
+		<article>
+			<h2>Designer d'espace</h2>
+			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
+			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
+		</article>
+	</section>
+
+    <section class="modification" id="portfolio">
+		<h2>Mes Projets</h2> 
+        <p class="buttonmodifier"><i class="fa-regular fa-pen-to-square"></i>modifier</p>
+    </section>
+
+    <div class="modal">
+        <div class="modal__box">
+            <i class="fa-solid fa-xmark"></i>
+            <div class="modal__box--content">
                 <h3>Galerie photo</h3>
-                    <button class="pushbutton">Ajouter une photo</button>
+                <div class="modal__gallery"></div>
+                <button class="pushbutton">Ajouter une photo</button>
             </div>
+            
         </div>
-    
-</section>
+    </div>
+    <section>
+        <div class="gallery"> <!--- mais il y a déjà une autre categ gallery dans le index avec le grid x3 --->
+            <img src="" alt=""/> <!--- photos plus petites --->
+            <!--- <i class="fa-solid fa-trash-can"></i> comment faire ??--->
+        </div>
+    </section>
 
 </main>
 

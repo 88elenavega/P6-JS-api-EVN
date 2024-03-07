@@ -27,3 +27,4 @@ export async function seConnecter(email, password) {
     const client = await reponse.json();
     return client
 }
+

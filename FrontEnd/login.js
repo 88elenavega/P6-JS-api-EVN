@@ -35,7 +35,7 @@ form.addEventListener("submit", async (event) => {
     
     localStorage.setItem("token", user.token)
 
-    window.location.href = "/FrontEnd/admin.html" 
+    window.location.href = "/admin.html" 
 });
 
 function validerEmail(email) {
