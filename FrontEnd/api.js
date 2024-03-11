@@ -7,7 +7,7 @@ export async function listeProjets() {
     
 }
 
-//fetch - appel pour les categories 
+//fetch - appel à l'API pour les categories 
 export async function listeCategories() {
 	const reponse = await fetch("http://localhost:5678/api/categories");
 	const categories = await reponse.json();
@@ -15,7 +15,7 @@ export async function listeCategories() {
 }
 
 
-//fetch - Envois a l'API les informations de connexion pour verifier si les identifiants sont corrects
+//fetch - envois a l'API les informations de connexion pour verifier si les identifiants sont corrects
 export async function seConnecter(email, password) {
     const reponse = await fetch("http://localhost:5678/api/users/login", {
         method: "POST",
@@ -28,3 +28,21 @@ export async function seConnecter(email, password) {
     return client
 }
 
+//fetch - supprimer chaque projet quand l'utilisateur est connecté 
+export async function deleteProject(id) {
+    await fetch("http://localhost:5678/api/works/" + id, {
+        method: "DELETE",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        }
+    })
+}
+
+
+//fetch - envois a l'API les informations de ajout des projets 
+export async function postProject() {
+    const response = await fetch("http://localhost:5678/api/works/", {
+        method: 'POST',
+        body: formData
+      });
+}
