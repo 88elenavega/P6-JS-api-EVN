@@ -1,5 +1,5 @@
 ////////////////////// MODALE 
-import { listeProjets, deleteProject } from "./api.js";
+import { listeProjets, deleteProject, postProject } from "./api.js";
 
 const galerieProjets = document.querySelector(".gallery");
 const galerieProjetsModal = document.querySelector(".modal__gallery");
@@ -17,10 +17,11 @@ const modale = document.querySelector(".modal");
 const xmark = document.querySelector(".modal__box .fa-xmark");
 
 if (!login) {
-    window.location.href = "./admin.html" // le lien pour la fenetre admin 
+    window.location.href = "./admin.html" // le lien pour la fenêtre admin 
 }
 
-/* comment ajouter ça sans que les photos disparaissent ? : 
+
+/* comment ajouter ça sans que les photos disparaissent ? --->
 
 const buttonModifier = document.querySelector(".fa-pen-to-square");
 //pour ouvrir la modale (button modifier)
@@ -32,7 +33,7 @@ modifier.addEventListener("click", () => {
 
 //pour fermer la modale 
 xmark.addEventListener("click", () => {
-    modale.classList.add("hidden") //mais display none ?
+    modale.classList.add("hidden")
 })
 
 
@@ -86,9 +87,47 @@ function supprimerProjet() { //???
         })
     })
 }
-
 supprimerProjet() 
+
+
 
 ////////////////////// MODALE - POST 
 
+// on récupere les élements 
+const modaleAjoutInfo = document.querySelector(".modal__box--post");
+const buttonValider = document.querySelector(".buttonValider"); 
+const buttonInputFile = document.getElementById("file");
+//il faut le mettre en gris jusqu'à que tous les champs ne sont pas remplis 
+
+// comment faire pour la X mark ? on a besoin de répeter ? 
+const arrowLeft = document.querySelector(".fa-arrow-left");
+
+// !!!!!!
+
+    buttonInputFile.addEventListener("click", () => {
+        modaleAjoutInfo.classList.add("hidden")
+        //donc ici c'est le bouton pour ajouter une image à la modale avant de poster 
+    })
+    arrowLeft.addEventListener("click", () => {
+        modaleAjoutInfo.classList.add("hidden")
+        //comment revenir à la modale principale ? 
+    })
+    //il faut refaire le Event Listener de X mark ? 
+
+
+const photoAjouté = document.querySelector(".modal__box--post img"); //c'est la balise img du div .modal__box--post
+//est-ce que on peut nommer les variables avec des accents ? 
+
+// To send form data using JavaScript with a POST request (import fetch postProject)
+const form = document.querySelector("form");
+const titre = document.getElementById("titre");
+const catégorie = document.getElementById("category");
+
+
+    form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form); // Create FormData object from the form
+        //donc ici c'est le bouton VALIDER 
+    })
 
