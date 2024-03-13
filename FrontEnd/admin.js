@@ -51,11 +51,10 @@ async function generateGallery() {
             <figcaption>${item.title}</figcaption>
         </figure>
     `
-        //petite galerie sur la modal
+        //petite galerie sur la modal sans le texte 
         galerieProjetsModal.innerHTML += `
         <figure class="project" data-category="${item.categoryId}">
             <img src="${item.imageUrl}" alt="${item.title}">
-            <figcaption>${item.title}</figcaption>
             <i class="fa-solid fa-trash-can" data-id="${item.id}"></i>
         </figure>
     `
@@ -91,7 +90,7 @@ supprimerProjet()
 
 
 
-////////////////////// MODALE - POST 
+////////////////////// MODALE - POST 1 (encore vide)
 
 // on récupere les élements 
 const modaleAjoutInfo = document.querySelector(".modal__box--post");
@@ -123,11 +122,17 @@ const form = document.querySelector("form");
 const titre = document.getElementById("titre");
 const catégorie = document.getElementById("category");
 
+//il faut créer les options de l'input avec JS aussi ??
 
-    form.addEventListener('submit', async (event) => {
+
+
+////////////////////// MODALE - POST 2 (rempli avec tous les élements)
+
+form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const formData = new FormData(form); // Create FormData object from the form
-        //donc ici c'est le bouton VALIDER 
+        //donc ici c'est le bouton VALIDER ??
     })
 
+// postProject je le mets où ??? 

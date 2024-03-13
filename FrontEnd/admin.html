@@ -14,7 +14,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="editionmode">
+<body>
+
+	<div>
+		<p class="lignemodeedition"><i class="fa-regular fa-pen-to-square"></i>Mode édition</p>
+	</div>
 
     <header>
         <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
@@ -22,7 +26,7 @@
             <ul>
                 <li>projets</li>
                 <li>contact</li>
-                <li><a href="/index.html">logout</a></li> <!--- utilisateur connecté / click pour revenir à la page d'accueil --->
+                <li><a href="/index.html" class="logout">logout</a></li> <!--- utilisateur connecté / click pour revenir à la page d'accueil -->
                 <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
             </ul>
         </nav>
@@ -53,29 +57,31 @@
             <div class="modal__box--content">
                 <h3>Galerie photo</h3>
                 <div class="modal__gallery"></div>
+				<div class="lignemodal"></div>
                 <button class="pushbutton">Ajouter une photo</button>
             </div>
-		<div class="">
-			<i class="fa-solid fa-arrow-left"></i>
-			<i class="fa-solid fa-xmark"></i>
-				<div class="modal__box--post">
-					<h3>Ajout photo</h3>
-					<form>
-						<label for="file">+ Ajouter photo</label>
-						<input type="file" id="file" name="file">
-							<img src="#" alt="image que sera ajouté aux projets">
-							<p>jpg, png : 4mo max</p>
-						<label for="titre">Titre</label>
-						<input type="text" id="titre" name="titre">
-						<label for="category">Catégorie</label>
-						<select name="category" id="category"></select>
-							<option value="1">Objets</option>
-							<option value="2">Appartements</option>
-							<option value="3">Hotels & Restaurants</option>
-						
-						<button class="buttonValider">Valider</button>
-					</form>
-				</div>	
+
+			<div class="">
+				<i class="fa-solid fa-arrow-left hidden"></i> <!--- hidden ou pas ? -->
+				<i class="fa-solid fa-xmark"></i>
+					<div class="modal__box--post">
+						<h3>Ajout photo</h3>
+						<form>
+							<label for="file">+ Ajouter photo</label>
+							<input type="file" id="file" name="file">
+								<img src="#" alt="image que sera ajouté aux projets">
+								<p>jpg, png : 4mo max</p>
+							<label for="titre">Titre</label>
+							<input type="text" id="titre" name="titre">
+							<label for="category">Catégorie</label>
+							<select name="category" id="category">
+								<option value="1">Objets</option>
+								<option value="2">Appartements</option>
+								<option value="3">Hotels & Restaurants</option>
+							</select>
+							<button class="buttonValider">Valider</button>
+						</form>
+			</div>	
 		</div>
             
         </div>
