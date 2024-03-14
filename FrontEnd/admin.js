@@ -21,21 +21,21 @@ if (!login) {
 }
 
 
-/* comment ajouter ça sans que les photos disparaissent ? --->
+//comment ajouter ça sans que les photos disparaissent ? --->
 
 const buttonModifier = document.querySelector(".fa-pen-to-square");
 //pour ouvrir la modale (button modifier)
-modifier.addEventListener("click", () => {
+buttonModifier.addEventListener("click", () => {
     modale.classList.remove("hidden")
 })
-*/ 
 
 
 //pour fermer la modale 
 xmark.addEventListener("click", () => {
     modale.classList.add("hidden")
 })
-
+// ça ne marche plus :( 
+    
 
 //affichage gallery
 async function generateGallery() {
@@ -67,8 +67,8 @@ await generateGallery()
 ////////////////////// MODALE - DELETE 
 
 //pour ajouter la poubelle sur chaque photo? 
-const poubelle = document.createElement ("i")
-poubelle.classList.add ("fa-solid fa-trash-can") 
+const poubelle = document.createElement("i")
+poubelle.classList.add("fa-solid", "fa-trash-can") 
 
 //pour supprimer chaque photo 
 function supprimerProjet() { //???

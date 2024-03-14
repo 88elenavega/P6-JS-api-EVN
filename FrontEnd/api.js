@@ -40,7 +40,7 @@ export async function deleteProject(id) {
 
 
 //fetch - envois a l'API les informations de ajout des projets 
-export async function postProject() {
+export async function postProject(formData) {
     const response = await fetch("http://localhost:5678/api/works/", {
         method: 'POST',
         body: formData //pas json?? 
