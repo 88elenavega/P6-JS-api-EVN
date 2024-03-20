@@ -13,28 +13,31 @@ const login = localStorage.getItem("token");
 // const modifier = document.querySelector("header nav .login");
 const logout = document.querySelector("header nav .logout");
 
-const modale = document.querySelector(".modal");
+const modale1 = document.querySelector("#modal1");
 const xmark = document.querySelector(".modal__box .fa-xmark");
+const xmark2 = document.querySelector("#close2");
 
 if (!login) {
     window.location.href = "./admin.html" // le lien pour la fenêtre admin 
 }
 
 
-//comment ajouter ça sans que les photos disparaissent ? --->
-
-const buttonModifier = document.querySelector(".fa-pen-to-square");
+const buttonModifier = document.querySelector(".buttonmodifier");
 //pour ouvrir la modale (button modifier)
 buttonModifier.addEventListener("click", () => {
-    modale.classList.remove("hidden")
+    modale1.classList.remove("hidden")
 })
 
 
 //pour fermer la modale 
 xmark.addEventListener("click", () => {
-    modale.classList.add("hidden")
+    modale1.classList.add("hidden")
 })
-// ça ne marche plus :( 
+
+xmark2.addEventListener("click", () => {
+    modale2.classList.add("hidden")
+})
+
     
 
 //affichage gallery
@@ -90,32 +93,42 @@ supprimerProjet()
 
 
 
-////////////////////// MODALE - POST 1 (encore vide)
+////////////////////// MODALE - POST version A (encore vide)
+
+const buttonAjouterPhoto = document.querySelector('.pushbuttongreen')
+const modale2 = document.querySelector("#modal2")
+
+buttonAjouterPhoto.addEventListener("click", () => {
+    modale2.classList.remove("hidden")
+    modale1.classList.add('hidden')
+})
+
 
 // on récupere les élements 
 const modaleAjoutInfo = document.querySelector(".modal__box--post");
 const buttonValider = document.querySelector(".buttonValider"); 
 const buttonInputFile = document.getElementById("file");
-//il faut le mettre en gris jusqu'à que tous les champs ne sont pas remplis 
+    //il faut le mettre en gris jusqu'à que tous les champs ne sont pas remplis 
 
-// comment faire pour la X mark ? on a besoin de répeter ? 
-const arrowLeft = document.querySelector(".fa-arrow-left");
+
+const arrowLeft = document.querySelector(".fa-arrow-left"); 
 
 // !!!!!!
 
-    buttonInputFile.addEventListener("click", () => {
+    /*buttonInputFile.addEventListener("click", () => {
         modaleAjoutInfo.classList.add("hidden")
         //donc ici c'est le bouton pour ajouter une image à la modale avant de poster 
-    })
+    })*/
     arrowLeft.addEventListener("click", () => {
-        modaleAjoutInfo.classList.add("hidden")
+        modale2.classList.add("hidden")
+        modale1.classList.remove('hidden')
         //comment revenir à la modale principale ? 
     })
     //il faut refaire le Event Listener de X mark ? 
 
 
-const photoAjouté = document.querySelector(".modal__box--post img"); //c'est la balise img du div .modal__box--post
-//est-ce que on peut nommer les variables avec des accents ? 
+const photoAjouté = document.querySelector(".modal__box--post img");
+ 
 
 // To send form data using JavaScript with a POST request (import fetch postProject)
 const form = document.querySelector("form");
@@ -126,13 +139,15 @@ const catégorie = document.getElementById("category");
 
 
 
-////////////////////// MODALE - POST 2 (rempli avec tous les élements)
+////////////////////// MODALE - POST version B (rempli avec tous les élements)
 
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const formData = new FormData(form); // Create FormData object from the form
-        //donc ici c'est le bouton VALIDER ??
+        //donc ici c'est le bouton VALIDER
+        await postProject(formData)
+    generateGallery()
     })
 
-// postProject je le mets où ??? 
+postProject () //verif

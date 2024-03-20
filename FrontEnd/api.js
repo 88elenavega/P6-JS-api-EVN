@@ -43,6 +43,9 @@ export async function deleteProject(id) {
 export async function postProject(formData) {
     const response = await fetch("http://localhost:5678/api/works/", {
         method: 'POST',
-        body: formData //pas json?? 
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
+        body: formData
       });
 }

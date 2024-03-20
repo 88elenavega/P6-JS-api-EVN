@@ -51,41 +51,48 @@
         <p class="buttonmodifier"><i class="fa-regular fa-pen-to-square"></i>modifier</p>
     </section>
 
-    <div class="modal">
+    <div class="modal" id="modal1">
         <div class="modal__box">
             <i class="fa-solid fa-xmark"></i>
             <div class="modal__box--content">
                 <h3>Galerie photo</h3>
                 <div class="modal__gallery"></div>
 				<div class="lignemodal"></div>
-                <button class="pushbutton">Ajouter une photo</button>
+                <button class="pushbuttongreen">Ajouter une photo</button>
             </div>
-
-			<div class="">
-				<i class="fa-solid fa-arrow-left"></i> <!--- hidden ou pas ? -->
-				<i class="fa-solid fa-xmark"></i>
-					<div class="modal__box--post">
-						<h3>Ajout photo</h3>
-						<form>
-							<label for="file">+ Ajouter photo</label>
-							<input type="file" id="file" name="file">
-								<img src="#" alt="image que sera ajouté aux projets">
-								<p>jpg, png : 4mo max</p>
-							<label for="titre">Titre</label>
-							<input type="text" id="titre" name="titre">
-							<label for="category">Catégorie</label>
-							<select name="category" id="category">
-								<option value="1">Objets</option>
-								<option value="2">Appartements</option>
-								<option value="3">Hotels & Restaurants</option>
-							</select>
-							<button class="buttonValider">Valider</button>
-						</form>
-			</div>	
 		</div>
-            
+    </div>
+
+	<div class="modal hidden" id="modal2">
+		<div class="modal__box">
+			<i class="fa-solid fa-arrow-left"></i>
+			<i class="fa-solid fa-xmark" id="close2"></i>
+			<div class="modal__box--content" id="post">
+				<h3>Ajout photo</h3>
+				<form>
+					<i class="fa-regular fa-image"></i>
+					<label for="file">+ Ajouter photo</label>
+					<input type="file" id="file" name="image">
+					<img src="#" alt="image que sera ajouté aux projets">
+					<p>jpg, png : 4mo max</p>
+
+					<label for="title">Titre</label>
+					<input type="text" id="title" name="title">
+
+					<label for="category">Catégorie</label>
+						<select name="category" id="category">
+							<option value="1">Objets</option>
+							<option value="2">Appartements</option>
+							<option value="3">Hotels & Restaurants</option>
+						</select>
+
+					<div class="lignemodal"></div>
+					<button class="buttonValider">Valider</button>
+				</form>
+			</div>	
         </div>
     </div>
+
     <section>
         <div class="gallery"> 
         </div>
