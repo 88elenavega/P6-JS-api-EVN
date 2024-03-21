@@ -346,6 +346,7 @@ input[type="submit"]:hover{
 	position: absolute;
 	top: 20px;
 	right: 20px;
+	font-size: 24px; 
 }
 
 .fa-arrow-left {
@@ -353,6 +354,7 @@ input[type="submit"]:hover{
 	position: absolute;
 	top: 20px;
 	left: 20px;
+	font-size: 24px;
 }
 
 .modal__box--content  {
@@ -418,18 +420,49 @@ input[type="submit"]:hover{
 	
 }
 
-#post form {
-	text-align: left;
-	margin-top:30px;
+.modal__box--post  {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+}
+
+
+#post form {
 	
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 	width: 50%;
 	margin: auto;
 	height: 50px;
 	font-size: 1.2em;
+	
 }
+
+
+.insertphoto {
+	background-color: #E8F1F6;
+	width: 420px;
+	height: 169px;
+	top: 786px;
+	left: 510px;
+	border-radius: 3px;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-sizing: content-box; /*???*/
+}
+
+.fa-image {
+	margin-top: 50px;
+	font-size: 50px;
+	color:lightgrey;;
+}
+
 
 
 #post input {
@@ -438,9 +471,24 @@ input[type="submit"]:hover{
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
+
 #post label {
 	margin: 2em 0 1em 0;
+	text-align: left; 
 }
+
+
+.buttonplusajouterphoto {
+	width: 173px;
+	height: 17px;
+	border-radius: 60px;
+	padding: 15px 20px;
+	color: darkcyan; 
+	background-color: lightgrey;
+	text-align: center;
+
+}
+
 
 
 
@@ -448,7 +496,11 @@ input[type="submit"]:hover{
 	margin-bottom: 20px;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+
+	width: 250px;
+	font-size: 1.2em;
 }
+
 
 .lignemodal {
 	width: 420px;
@@ -461,7 +513,7 @@ input[type="submit"]:hover{
 .buttonValider {
 	cursor: pointer;
 
-	width: 237px;
+	width: 277px;
 	height: 17px;
 	top: 1249px;
 	left: 649px;
@@ -477,9 +529,8 @@ input[type="submit"]:hover{
 
 	border: none;
 	border-radius: 60px;
-	padding: 15px 20px;
+	padding: 20px;
 
-	margin: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;

@@ -1,5 +1,5 @@
 ////////////////////// MODALE 
-import { listeProjets, deleteProject, postProject } from "./api.js";
+import { listeProjets, deleteProject, postProject, listeCategories} from "./api.js";
 
 const galerieProjets = document.querySelector(".gallery");
 const galerieProjetsModal = document.querySelector(".modal__gallery");
@@ -122,9 +122,9 @@ const arrowLeft = document.querySelector(".fa-arrow-left");
     arrowLeft.addEventListener("click", () => {
         modale2.classList.add("hidden")
         modale1.classList.remove('hidden')
-        //comment revenir à la modale principale ? 
+        
     })
-    //il faut refaire le Event Listener de X mark ? 
+   
 
 
 const photoAjouté = document.querySelector(".modal__box--post img");
@@ -135,7 +135,19 @@ const form = document.querySelector("form");
 const titre = document.getElementById("titre");
 const catégorie = document.getElementById("category");
 
-//il faut créer les options de l'input avec JS aussi ??
+
+//les options de l'input 
+/*
+______.forEach( => {
+    const option = document.createElement
+    option.value = category.id 
+    option.textContent = category.name
+    select.appenChild(option)
+})
+
+*/
+
+
 
 
 

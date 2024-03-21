@@ -67,14 +67,16 @@
 		<div class="modal__box">
 			<i class="fa-solid fa-arrow-left"></i>
 			<i class="fa-solid fa-xmark" id="close2"></i>
-			<div class="modal__box--content" id="post">
+			<div class="modal__box--post" id="post">
 				<h3>Ajout photo</h3>
 				<form>
-					<i class="fa-regular fa-image"></i>
-					<label for="file">+ Ajouter photo</label>
-					<input type="file" id="file" name="image">
-					<img src="#" alt="image que sera ajouté aux projets">
-					<p>jpg, png : 4mo max</p>
+					<div class="insertphoto">
+						<i class="fa-regular fa-image"></i>
+						<label for="file" class="buttonplusajouterphoto">+ Ajouter photo</label>
+						<input type="file" id="file" name="image">
+						<img src="#" alt="image que sera ajouté aux projets">
+						<p>jpg, png : 4mo max</p>
+					</div>
 
 					<label for="title">Titre</label>
 					<input type="text" id="title" name="title">
@@ -82,8 +84,7 @@
 					<label for="category">Catégorie</label>
 						<select name="category" id="category">
 							<option value="1">Objets</option>
-							<option value="2">Appartements</option>
-							<option value="3">Hotels & Restaurants</option>
+							
 						</select>
 
 					<div class="lignemodal"></div>
