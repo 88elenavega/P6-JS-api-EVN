@@ -48,4 +48,4 @@ function validerEmail(email) {
     
 }
 
-//mtn il faut essayer l'email et mot de passe donné sur README
+//essayer l'email et mot de passe donné sur README

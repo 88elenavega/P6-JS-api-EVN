@@ -29,7 +29,7 @@ buttonModifier.addEventListener("click", () => {
 })
 
 
-//pour fermer la modale 
+//pour fermer chaque modale
 xmark.addEventListener("click", () => {
     modale1.classList.add("hidden")
 })
@@ -69,11 +69,11 @@ await generateGallery()
 
 ////////////////////// MODALE - DELETE 
 
-//pour ajouter la poubelle sur chaque photo? 
+//pour ajouter la poubelle sur chaque photo
 const poubelle = document.createElement("i")
 poubelle.classList.add("fa-solid", "fa-trash-can") 
 
-//pour supprimer chaque photo 
+//pour supprimer chaque photo (click sur chaque poubelle)
 function supprimerProjet() { //???
     const lesPoubelles = document.querySelectorAll(".fa-trash-can")
     console.log(lesPoubelles)
@@ -107,23 +107,16 @@ buttonAjouterPhoto.addEventListener("click", () => {
 // on récupere les élements 
 const modaleAjoutInfo = document.querySelector(".modal__box--post");
 const buttonValider = document.querySelector(".buttonValider"); 
-const buttonInputFile = document.getElementById("file");
     //il faut le mettre en gris jusqu'à que tous les champs ne sont pas remplis 
 
 
 const arrowLeft = document.querySelector(".fa-arrow-left"); 
 
-// !!!!!!
-
-    /*buttonInputFile.addEventListener("click", () => {
-        modaleAjoutInfo.classList.add("hidden")
-        //donc ici c'est le bouton pour ajouter une image à la modale avant de poster 
-    })*/
-    arrowLeft.addEventListener("click", () => {
-        modale2.classList.add("hidden")
-        modale1.classList.remove('hidden')
+arrowLeft.addEventListener("click", () => {
+    modale2.classList.add("hidden")
+    modale1.classList.remove('hidden')
         
-    })
+})
    
 
 
@@ -132,21 +125,37 @@ const photoAjouté = document.querySelector(".modal__box--post img");
 
 // To send form data using JavaScript with a POST request (import fetch postProject)
 const form = document.querySelector("form");
-const titre = document.getElementById("titre");
-const catégorie = document.getElementById("category");
+const title = document.getElementById("title");
+const select = document.getElementById("category");
+const buttonInputFile = document.getElementById("file");
+
+const checkForm = () => {
+    if (title.value != '' && select.value != '' && buttonInputFile.files.length > 0) {
+        // Passer le bouton en vert
+        console.log('OK vert')
+        buttonValider.removeAttribute("disabled")
+    } else {
+        console.log("Pas ok : Gris")
+        buttonValider.setAttribute("disabled", true)
+    }
+}
+
+title.addEventListener("change", checkForm)
+select.addEventListener("change", checkForm)
+buttonInputFile.addEventListener("change", checkForm)
+
+const categories = await listeCategories();
+
+
 
 
 //les options de l'input 
-/*
-______.forEach( => {
-    const option = document.createElement
-    option.value = category.id 
+categories.forEach((category) => {
+    const option = document.createElement('option')
+    option.value = category.id
     option.textContent = category.name
-    select.appenChild(option)
+    select.appendChild(option)
 })
-
-*/
-
 
 
 
@@ -157,9 +166,10 @@ form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const formData = new FormData(form); // Create FormData object from the form
-        //donc ici c'est le bouton VALIDER
-        await postProject(formData)
+    //donc ici c'est le bouton VALIDER
+    await postProject(formData)
     generateGallery()
     })
 
-postProject () //verif
+
+    
