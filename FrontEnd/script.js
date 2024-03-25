@@ -50,6 +50,24 @@ buttons.forEach(button => {
 })
 
 
+    //this.classList.add('clicked');
+    //this.classList.remove('clicked');
+
+
+buttons.forEach(button => {
+    button.addEventListener("click", function() {
+        if (!clicked) {
+        button.style.backgroundColor = "red";
+        clicked = true;
+        } else {
+        button.style.backgroundColor = "white"; // Revert to default color
+        clicked = false;
+        }
+    })
+})
+
+
+
 
 // Authentification de l’utilisateur ---> fichier ./login.js
 
