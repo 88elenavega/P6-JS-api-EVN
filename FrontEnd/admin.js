@@ -168,11 +168,12 @@ form.addEventListener('submit', async (event) => {
     const formData = new FormData(form); // Create FormData object from the form
     //donc ici c'est le bouton VALIDER
     await postProject(formData)
+    
     generateGallery()
     //comment faire que la fenetre se ferme quand on a déjà validé ? /ou on doit pas fermer pour continuer à poster ?
-    submit.addEventListener("click", () => {
+    /*submit.addEventListener("click", () => {
         modale2.classList.add("hidden")
-    })
+    })*/
 })
 
 
