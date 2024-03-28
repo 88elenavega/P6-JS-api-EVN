@@ -2,7 +2,7 @@
 //fetch - appel à l'API pour les projets
 export async function listeProjets() { 
     const reponse = await fetch("http://localhost:5678/api/works");
-    const projets = await reponse.json(); //?? 
+    const projets = await reponse.json();
     return projets 
     
 }
@@ -35,6 +35,7 @@ export async function deleteProject(id) {
         headers: {
             "Authorization": "Bearer " + localStorage.getItem("token")
         }
+    //dans ce cas on a pas besoin de body, ni de reponse-return
     })
 }
 

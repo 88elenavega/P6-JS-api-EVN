@@ -34,8 +34,13 @@ categories.forEach(category => {
 //filtrer les travaux selon le filtre sélectionné 
 const buttons = document.querySelectorAll(".pushbutton")
 buttons.forEach(button => {
-
+    //button[categories].classList.remove('active');
     button.addEventListener("click", (event) => {
+        //ajouter le background-color quand on fait click (1 enlever active, 2 ajoute active)
+        document.querySelector('.active').classList.remove('active');
+        event.target.classList.add('active')
+        
+
         const categoryClicked = event.target.getAttribute('data-category');
         const listFigure = document.querySelectorAll('.project')
 
@@ -49,22 +54,6 @@ buttons.forEach(button => {
     })
 })
 
-
-    //this.classList.add('clicked');
-    //this.classList.remove('clicked');
-
-
-buttons.forEach(button => {
-    button.addEventListener("click", function() {
-        if (!clicked) {
-        button.style.backgroundColor = "red";
-        clicked = true;
-        } else {
-        button.style.backgroundColor = "white"; // Revert to default color
-        clicked = false;
-        }
-    })
-})
 
 
 

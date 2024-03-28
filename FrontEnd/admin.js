@@ -74,7 +74,7 @@ const poubelle = document.createElement("i")
 poubelle.classList.add("fa-solid", "fa-trash-can") 
 
 //pour supprimer chaque photo (click sur chaque poubelle)
-function supprimerProjet() { //???
+function supprimerProjet() { 
     const lesPoubelles = document.querySelectorAll(".fa-trash-can")
     console.log(lesPoubelles)
 
@@ -169,7 +169,11 @@ form.addEventListener('submit', async (event) => {
     //donc ici c'est le bouton VALIDER
     await postProject(formData)
     generateGallery()
+    //comment faire que la fenetre se ferme quand on a déjà validé ? /ou on doit pas fermer pour continuer à poster ?
+    submit.addEventListener("click", () => {
+        modale2.classList.add("hidden")
     })
+})
 
 
     
