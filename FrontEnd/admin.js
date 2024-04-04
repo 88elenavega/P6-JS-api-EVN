@@ -10,7 +10,7 @@ const login = localStorage.getItem("token");
 
 
 
-// const modifier = document.querySelector("header nav .login");
+const modifier = document.querySelector("header nav .login");
 const logout = document.querySelector("header nav .logout");
 
 const modale1 = document.querySelector("#modal1");
@@ -81,7 +81,7 @@ function supprimerProjet() {
     //click sur chaque poubelle 
     lesPoubelles.forEach(item => {
         item.addEventListener("click", async (event) => {
-            console.log(event.target.dataset.id)
+           
             const id = event.target.dataset.id
             await deleteProject(id)
             await generateGallery()
@@ -107,7 +107,7 @@ buttonAjouterPhoto.addEventListener("click", () => {
 // on récupere les élements 
 const modaleAjoutInfo = document.querySelector(".modal__box--post");
 const buttonValider = document.querySelector(".buttonValider"); 
-    //il faut le mettre en gris jusqu'à que tous les champs ne sont pas remplis 
+    //en gris jusqu'à que tous les champs ne sont pas remplis 
 
 
 const arrowLeft = document.querySelector(".fa-arrow-left"); 
@@ -134,18 +134,26 @@ const checkForm = () => {
         // Passer le bouton en vert
         console.log('OK vert')
         buttonValider.removeAttribute("disabled")
+        return true;
     } else {
         console.log("Pas ok : Gris")
         buttonValider.setAttribute("disabled", true)
+        return false;
     }
 }
 
 title.addEventListener("change", checkForm)
 select.addEventListener("change", checkForm)
-buttonInputFile.addEventListener("change", checkForm)
+
+const preview = document.getElementById('preview')
+const overlay = document.querySelector(".overlay")
+buttonInputFile.addEventListener("change", (e) => {
+    checkForm()
+    preview.src = URL.createObjectURL(e.target.files[0])
+    overlay.classList.remove("hidden")
+})
 
 const categories = await listeCategories();
-
 
 
 
@@ -165,15 +173,20 @@ categories.forEach((category) => {
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
+    if (!checkForm()) {
+        return alert("Merci de remplir tous les champs");
+    }
     const formData = new FormData(form); // Create FormData object from the form
-    //donc ici c'est le bouton VALIDER
     await postProject(formData)
-    
+
     generateGallery()
-    //comment faire que la fenetre se ferme quand on a déjà validé ? /ou on doit pas fermer pour continuer à poster ?
-    /*submit.addEventListener("click", () => {
-        modale2.classList.add("hidden")
-    })*/
+
+    title.value = '';
+    select.value = '';
+    buttonInputFile.value = '';
+    overlay.classList.add("hidden")
+    modale2.classList.add("hidden")
+    buttonValider.setAttribute("disabled", true)
 })
 
 

@@ -74,8 +74,10 @@
 						<i class="fa-regular fa-image"></i>
 						<label for="file" class="buttonplusajouterphoto">+ Ajouter photo</label>
 						<input type="file" id="file" name="image">
-						<img src="#" alt="image que sera ajouté aux projets"> <!--- comment cacher ça ? -->
 						<p>jpg, png : 4mo max</p>
+						<div class="overlay hidden">
+							<img id="preview" src="/assets\images\abajour-tahina.png" alt="image que sera ajouté aux projets"> <!--- comment cacher ça ? -->
+						</div>
 					</div>
 
 						<label for="title">Titre</label>
@@ -83,11 +85,11 @@
 
 						<label for="category">Catégorie</label>
 							<select name="category" id="category">
-								<option value="Choisissez-vous votre catégorie"></option> <!--- il faut laiser vide comme sur la maquette ? -->
+								<option value="Choisissez-vous votre catégorie"></option>
 							</select>
 
 					<div class="lignemodal"></div>
-					<button class="buttonValider">Valider</button>
+					<button class="buttonValider" disabled>Valider</button> <!-- button Disabled par defaut -->
 				</form>
 			</div>	
         </div>

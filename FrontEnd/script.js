@@ -34,9 +34,9 @@ categories.forEach(category => {
 //filtrer les travaux selon le filtre sélectionné 
 const buttons = document.querySelectorAll(".pushbutton")
 buttons.forEach(button => {
-    //button[categories].classList.remove('active');
+
     button.addEventListener("click", (event) => {
-        //ajouter le background-color quand on fait click (1 enlever active, 2 ajoute active)
+        //ajouter le background-color quand on fait click
         document.querySelector('.active').classList.remove('active');
         event.target.classList.add('active')
         
