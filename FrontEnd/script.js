@@ -24,7 +24,6 @@ const categories = await listeCategories();
 const filterbuttons = document.querySelector('.filterbuttons');
 
 categories.forEach(category => {
-    console.log(category)
     filterbuttons.innerHTML += `
         <button class="pushbutton" data-category="${category.id}">${category.name}</button>
     `

@@ -76,7 +76,6 @@ poubelle.classList.add("fa-solid", "fa-trash-can")
 //pour supprimer chaque photo (click sur chaque poubelle)
 function supprimerProjet() { 
     const lesPoubelles = document.querySelectorAll(".fa-trash-can")
-    console.log(lesPoubelles)
 
     //click sur chaque poubelle 
     lesPoubelles.forEach(item => {
@@ -132,11 +131,9 @@ const buttonInputFile = document.getElementById("file");
 const checkForm = () => {
     if (title.value != '' && select.value != '' && buttonInputFile.files.length > 0) {
         // Passer le bouton en vert
-        console.log('OK vert')
         buttonValider.removeAttribute("disabled")
         return true;
     } else {
-        console.log("Pas ok : Gris")
         buttonValider.setAttribute("disabled", true)
         return false;
     }

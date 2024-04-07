@@ -38,14 +38,6 @@ form.addEventListener("submit", async (event) => {
     window.location.href = "/admin.html" 
 });
 
-function validerEmail(email) {
-    let emailRegExp = new RegExp("[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+")
-    if (emailRegExp.test(email)) {
-        return true
-    } else {
-        return false
-    }
-    
-}
+
 
 //essayer l'email et mot de passe donné sur README 
