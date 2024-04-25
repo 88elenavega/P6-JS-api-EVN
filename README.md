@@ -1,6 +1,6 @@
-NOM DE PROJET : Créez une page web dynamique avec JavaScript
-SCÉNARIO : Gestion des événements utilisateurs, manipulation des éléments du DOM et récuperation des données avec JavaScript
-FOCUS ON : Apprendre à communiquer avec une API
+- NOM DE PROJET : Créez une page web dynamique avec JavaScript
+- SCÉNARIO : Gestion des événements utilisateurs, manipulation des éléments du DOM et récuperation des données avec JavaScript
+- FOCUS ON : Apprendre à communiquer avec une API
 
 ## Information pour le lancer le code
 
